@@ -30,7 +30,7 @@ ltAppAsset::register($this);
     <?php $this->head() ?>
   </head>
   <body>
-      <?php $this->beginBody() ?>
+    <?php $this->beginBody() ?>
     <header>
 		<div class="container">
 			<div class="row">
