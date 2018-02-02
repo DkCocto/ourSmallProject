@@ -23,6 +23,7 @@ ltAppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
+    <?= Html::cssFile(YII_DEBUG ? '@web/css/all.css' : '@web/css/all.min.css?v=' . filemtime(Yii::getAlias('@webroot/css/all.min.css'))) ?>
     <title><?= Html::encode($this->title) ?></title>
     
     <!-- Bootstrap -->
@@ -175,6 +176,7 @@ ltAppAsset::register($this);
 							</p>
                             <!-- 
                                 All links in the footer should remain intact. 
+                            <a href="../../assets/js/all.json"></a>
                                 Licenseing information is available at: http://bootstraptaste.com/license/
                                 You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Resi
                             -->
@@ -193,6 +195,8 @@ ltAppAsset::register($this);
     
 	<?php $this->registerJsFile('@web/js/wow.min.js', ['depends' => 'yii\web\YiiAsset'])?>
         <?php $this->endBody() ?>
+        <?= Html::jsFile(YII_DEBUG ? '@web/js/lib.js' : '@web/js/lib.min.js?v=' . filemtime(Yii::getAlias('@webroot/js/lib.min.js'))) ?>
+        <?= Html::jsFile(YII_DEBUG ? '@web/js/all.js' : '@web/js/all.min.js?v=' . filemtime(Yii::getAlias('@webroot/js/all.min.js'))) ?>
   </body>
 </html>
 <?php $this->endPage() ?>

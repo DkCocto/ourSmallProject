@@ -22,9 +22,11 @@ class AppAsset extends AssetBundle
 	'css/responsive-slider.css',
 	'css/animate.css',
 	'css/font-awesome.min.css',
-	'css/style.css',	
+	'css/style.css',
+        'css/site.css',
     ];
     public $js = [
+        'js/site.ts',
 //        'js/jquery-2.1.1.min.js',
 //        'js/bootstrap.min.js',
         'js/fliplightbox.min.js',

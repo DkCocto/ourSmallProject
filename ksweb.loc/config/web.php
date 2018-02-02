@@ -10,6 +10,19 @@ $config = [
     'language' => 'ru-RU',
     'layout' => 'main',
     'components' => [
+        
+        'assetManager' => [
+            'bundles' => false,
+        ],
+        'assetManager' => [
+         'converter' => [
+             'class' => 'yii\web\AssetConverter',
+             'commands' => [
+                 'less' => ['css', 'lessc {from} {to} --no-color'],
+                 'ts' => ['js', 'tsc --out {to} {from}'],
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'GIuoofsjv90jmklskjcascs9780867dasjbdascas',
