@@ -5,6 +5,7 @@
 /* ==== overwrite bootstrap standard ==== */
 @import url('overwrite.css');
 @import url('animate.css');
+@import url('bootstrap.css');
 
 
 
@@ -72,29 +73,38 @@ a:hover {
 }
 .navbar-brand h3 {
 	float: left;
-	line-height:20px;
+	line-height: 20px;
 	padding: 20px;
 	font-size: 20px;
 	margin-top: 20px;
         margin-left: -200px;
-	color:#6D9C91;		
+	color:#999;		
 }
 .navbar-brand h1:hover {
   background-color:#fff;
 }
 
-/*.menu {
-	font-size:14px;
-	float:right;
-        margin-right: -250px;
-	text-transform:uppercase;
-	font-weight:500;
-	
+@media (max-width: 480px) {
+    .navbar-brand h1 {
+        float: left;
+        line-height:5px;
+        padding: 5px;
+        font-size: 20px;
+        margin-top: -15px;
+        margin-left: -30px;
+        color:#999;
+    }
+    .navbar-brand h3{
+        float: left;
+	line-height: 15px;
+	padding: 5px;
+	font-size: 15px;
+	margin-top: 5px;
+        margin-left: -50px;
+	color:#38FF8A;
+  }
+  
 }
-
-.menu ul .nav-tabs-li {
-	color:#000;	
-}*/
 
 .menu{
         font-size:14px;

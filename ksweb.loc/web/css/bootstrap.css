@@ -1393,6 +1393,11 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+@media (min-width: 480px) {
+  .container {
+    width: 464px;
+  }
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -3834,6 +3839,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
+  min-width: auto;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
