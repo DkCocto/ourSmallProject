@@ -9,20 +9,20 @@ $config = [
     'bootstrap' => ['log'],
     'language' => 'ru-RU',
     'layout' => 'main',
+    'defaultRoute' => 'site/index',
     'components' => [
-        
+     
         'assetManager' => [
-            'bundles' => false,
-        ],
-        'assetManager' => [
-         'converter' => [
-             'class' => 'yii\web\AssetConverter',
-             'commands' => [
-                 'less' => ['css', 'lessc {from} {to} --no-color'],
-                 'ts' => ['js', 'tsc --out {to} {from}'],
+        'bundles' => [
+            'yii\bootstrap\BootstrapAsset' => [
+                'sourcePath' => null,
+                'basePath' => '@webroot',
+                'baseUrl' => '@web',
+                'css' => ['css/bootstrap.css'],
                 ],
             ],
         ],
+        
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'GIuoofsjv90jmklskjcascs9780867dasjbdascas',
@@ -65,10 +65,12 @@ $config = [
                     'pattern' => '',
                     'route' => 'site/index',
                     'suffix' => '',
+                    
                 ],
-//                '<action:\w+>' => 'site/<action>',
-                '<action:[\w\-]+>' => 'site/<action>',
-                ''
+                    '<action>' => 'admin/user/<action>',
+////                '<action:\w+>' => 'site/<action>',
+//                  '<action:[\w\-]+>' => 'site/<action>',
+//                  ''
 
             ],
         ],

@@ -32,88 +32,14 @@ ltAppAsset::register($this);
   </head>
   <body>
       <?php $this->beginBody() ?>
-    <header>
-		<div class="container">
-			<div class="row">
-				<nav class="navbar navbar-default" role="navigation">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<div class="navbar-brand">
-                                                                <h1><?= Html::a('KSWEB', Url::to(['/index']))?>
-                                                                    <br />
-                                                                    <br />
-                                                                        <!--//                                                                        NavBar::begin([
-//                                                                            'brandLabel' => 'KSWeb',
-//                                                                            'brandUrl' => Yii::$app->homeUrl,
-//                                                                            'options' => [
-////                                                                                'class' => 'navbar-inverse navbar-fixed-top',
-//                                                                            ],
-//                                                                        ]);
-//                                                                        NavBar::end();-->
-                                                                </h1>
-                                                            <h3>A Developer`s Suite For Android Platform</h3>
-								
-							</div>
-						</div>
-						<div class="menu">
-<!--                                                    <nav id="menu-list">-->
-							<ul class="nav nav-tabs" role="tablist">
-                                                                <li role="presentation"><?= Html::a('KSWEB', Url::to(['/index']))?></li>
-								<li role="presentation"><?= Html::a('DOWNLOAD', Url::to(['/download']))?></li>
-								<li role="presentation"><?= Html::a('BUSINESS OFFERS', Url::to(['/bussines-offers']))?></li>
-                                                                <li role="presentation"><?= Html::a('BUY A SERIAL KEY', Url::to(['buy-serial-key-a'])) ?></li>
-                                                                <li role="presentation"><?= Html::a('FEATURES INFO', Url::to(['/features-info'])) ?>
-                                                                    <ul class="nav-tabs-li" role="tablist">
-                                                                        <li role="presentation"><?= Html::a('PHP MODULES LIST', Url::to(['/php-modules-list']))?></li>
-                                                                        <li role="presentation"><?= Html::a('SERVER MODULES LIST', Url::to(['/server-modules-list']))?></li>
-                                                                        <li role="presentation"><?= Html::a('SCHEDULER', Url::to(['/scheduler']))?></li>
-                                                                        <li role="presentation"><?= Html::a('KSWEB', Url::to(['/ksweb']))?></li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li role="presentation"><?= Html::a('CONTACT', Url::to(['/contact'])) ?></li>
-                                                                <!--<li role="presentation"><a href="contact.php"><?//= app\components\MenuWidget::widget()?></a></li>-->
-							</ul>
-<!--                                                    </nav>    -->
-						</div>
-					</div>			
-				</nav>
-			</div>
-		</div>
-	</header>
+        
 	
+        <!-- Responsive menu - START -->
+	<?= $this->render('_menu'); ?> 
+        <!-- Responsive menu - END -->
+        
 	<!-- Responsive slider - START -->
-	<div class="slider">
-		<div class="">
-			<div class="">
-				<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
-					<div class="slides" data-group="slides">						
-						<ul>
-							<li>
-								<div class="slide-body" data-group="slide">
-                                                                        <?= Html::img('/web/img/3.jpg', ['alt' => 'KSWeb'])?>
-                                                                    <!--<img src="/web/img/3.jpg" alt="" class="img-responsive" > -->
-								</div>					
-							</li>
-							<li>
-								<div class="slide-body" data-group="slide">
-                                                                        <?= Html::img('/web/img/6.jpg', ['alt' => 'KSWeb'])?>
-									<!--<img src="img/6.jpg" alt="" class="img-responsive" >  -->
-								</div>
-							</li>
-							<li>
-								<div class="slide-body" data-group="slide">
-                                                                        <?= Html::img('/web/img/5.jpg', ['alt' => 'KSWeb'])?>
-									<!--<img src="img/5.jpg" alt="" class="img-responsive" >  -->									
-								</div>
-							</li>					
-						</ul>
-					</div>			   
-					<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-angle-left fa-2x"></i></a>
-					<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-angle-right fa-2x"></i></a>		
-				</div>
-			</div>
-		</div>
-	</div>
+	<?= $this->render('_slider'); ?> 
     <!-- Responsive slider - END -->
  
         <?= $content; ?>	
@@ -197,6 +123,13 @@ ltAppAsset::register($this);
         <?php $this->endBody() ?>
         <?= Html::jsFile(YII_DEBUG ? '@web/js/lib.js' : '@web/js/lib.min.js?v=' . filemtime(Yii::getAlias('@webroot/js/lib.min.js'))) ?>
         <?= Html::jsFile(YII_DEBUG ? '@web/js/all.js' : '@web/js/all.min.js?v=' . filemtime(Yii::getAlias('@webroot/js/all.min.js'))) ?>
-  </body>
+<!--    <script>
+        Slider.prototype = {
+        getGlobalWidth: function() {
+        document.write (this.$element.width() + 0);
+      }
+      getGlobalWidth;
+    </script> -->
+      </body>
 </html>
 <?php $this->endPage() ?>
