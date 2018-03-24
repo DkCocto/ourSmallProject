@@ -7,10 +7,10 @@ use yii\helpers\Url;
 <h1 align="center">Hello world and girl</h1>
 <span class="url"><?= Html::a('BUSINESS OFFERS', Url::to(['/bussines-offers']))?></span>
 <br>
-<?= Html::img('/files/7.jpg', ['alt' => 'GIRLS']);?>
+<?= Html::img('/web/files/8.jpg', ['alt' => 'GIRLS']);?>
 
 <br>
-<?= Html::img('/web/img/9.jpg ', ['alt' => 'KSWeb'])?>
+<?= Html::a('BUSINESS OFFERS', Url::to(['/bussines-offers']))?>
 
 
 <!--<div class="slider">
