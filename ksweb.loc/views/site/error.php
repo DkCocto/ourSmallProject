@@ -19,8 +19,6 @@ $this->title = $name;
 
     <p>
         The above error occurred while the Web server was processing your request.
-        <br />
-    <h1>Help me!!!</h1>
     </p>
     <p>
         Please contact us if you think this is a server error. Thank you.

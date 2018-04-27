@@ -8,24 +8,13 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'ru-RU',
+    'charset' => 'utf-8', 
     'layout' => 'main',
     'defaultRoute' => 'site/index',
     'components' => [
-     
-        'assetManager' => [
-        'bundles' => [
-            'yii\bootstrap\BootstrapAsset' => [
-                'sourcePath' => null,
-                'basePath' => '@webroot',
-                'baseUrl' => '@web',
-                'css' => ['css/bootstrap.css'],
-                ],
-            ],
-        ],
-        
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'GIuoofsjv90jmklskjcascs9780867dasjbdascas',
+            'cookieValidationKey' => 'oiwj dgoaejkrigoje0934itbmi34tnb340ntb34erfg',
             'baseUrl' => '',
         ],
         'cache' => [
@@ -55,23 +44,12 @@ $config = [
             ],
         ],
         'db' => $db,
-        
+       
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'suffix' => '.php',
             'rules' => [
-                [
-                    'pattern' => '',
-                    'route' => 'site/index',
-                    'suffix' => '',
-                    
-                ],
-                    '<action>' => 'admin/user/<action>',
-////                '<action:\w+>' => 'site/<action>',
-//                  '<action:[\w\-]+>' => 'site/<action>',
-//                  ''
-
+                 '<action:\w+>' => 'site/<action>',
             ],
         ],
         

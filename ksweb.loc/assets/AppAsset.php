@@ -21,12 +21,12 @@ class AppAsset extends AssetBundle
 //        'css/bootstrap.min.css',
 	'css/responsive-slider.css',
 	'css/animate.css',
+//        'css/animate.min.css',
 	'css/font-awesome.min.css',
-	'css/style.css',
-        'css/site.css',
+	'css/style.css',	
     ];
     public $js = [
-        'js/site.ts',
+//        'js/site.js',
 //        'js/jquery-2.1.1.min.js',
 //        'js/bootstrap.min.js',
         'js/fliplightbox.min.js',
@@ -43,6 +43,6 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
+        'yii\bootstrap\BootstrapPluginAsset', // добавляет bootstrap.min.css, jquery-2.1.1.min.js, bootstrap.min.js
     ];
 }

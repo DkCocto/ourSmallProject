@@ -1,18 +1,17 @@
 <?php
 
-/* @var $this yii\web\View */
-
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\Breadcrumbs;
 
 $this->title = 'Download';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
+
+
 <div class="feature">
-		<div class="breadcrumbs">
-			<h4>Download</h4>
-		</div>
-		
+				
 		<div class="container">
 			<div class="row">
                             <p>Minimal requirements: Android device with OS version 2.3.3 or higher, ARM-based or Intel x86 processor.</p>

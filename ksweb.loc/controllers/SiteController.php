@@ -15,8 +15,6 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-//    public $layout = 'main';
-    
     public function behaviors()
     {
         return [
@@ -63,6 +61,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->title = 'Главная';
         return $this->render('index');
     }
 
@@ -75,7 +74,6 @@ class SiteController extends Controller
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
-//            return $this->render('login');
         }
 
         $model = new LoginForm();
@@ -98,48 +96,59 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
-
+    
     /**
-     * Displays contact page.
+     * Download action.
      *
-     * @return Response|string
+     * @return Response
      */
-    public function actionBussinesOffers()
+    
+    public function actionDownload()
     {
-        $this->layout = 'main';
+        $this->view->title = 'Download';
+        return $this->render('download');
+    }
+    
+    /**
+     * BusnessOffers action.
+     *
+     * @return Response
+     */
+    
+    public function actionBusnessOffers()
+    {
+        $this->view->title = 'Busness Offers';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();
         }
-        return $this->render('bussines-offers', [
+        return $this->render('busness-offers', [
             'model' => $model,
         ]);
     }
-
+    
     /**
-     * Displays about page.
+     * BuyASerialKey action.
      *
-     * @return string
+     * @return Response
      */
-//    public function actionBusinessOffers()
-//    {
-//        //$this->layout = '_main';
-//        return $this->render('business_offers');
-//    }
     
-    public function actionDownload() {
-        return $this->render('download');
-    }
-    
-    public function actionBuySerialKeyA() {
-        return $this->render('buy-serial-key-a');
-//        return 'Hello world';
+    public function actionBuyASerialKey()
+    {
+        $this->view->title = 'Buy A Serial Key';
         
+        return $this->render('buy-a-serial-key');
     }
     
+    /**
+     * BuyASerialKey action.
+     *
+     * @return Response
+     */
     public function actionFeaturesInfo() {
+        $this->view->title = 'Features Info';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
 //            return $this->render('login');
@@ -155,9 +164,62 @@ class SiteController extends Controller
         
     }
     
-    public function actionInfo() {
-//       $this->layout = '_main';
-        $this->layout = 'main';
+    /**
+     * PhpModulesList action.
+     *
+     * @return Response
+     */
+    public function actionPhpModulesList() {
+        
+        $this->view->title = 'Php Modules List';
+        return $this->render('php-modules-list');
+        
+    }
+    
+    /**
+     * PhpModulesList action.
+     *
+     * @return Response
+     */
+    public function actionServerModulesList() {
+        
+        $this->view->title = 'Server Modules List';
+        return $this->render('server-modules-list');
+        
+    }
+    
+    /**
+     * Scheduler action.
+     *
+     * @return Response
+     */
+    public function actionScheduler() {
+        
+        $this->view->title = 'Scheduler';
+        return $this->render('scheduler');
+        
+    }
+    
+    /**
+     * Scheduler action.
+     *
+     * @return Response
+     */
+    public function actionKswebControl() {
+        
+        $this->view->title = 'Ksweb Control';
+        return $this->render('ksweb-control');
+        
+    }
+
+    /**
+     * Displays contact page.
+     *
+     * @return Response|string
+     */
+    public function actionContact()
+    {
+        $this->view->title = 'Contact';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -168,7 +230,14 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-    
-//    public function action
-   
+
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionAbout()
+    {
+        return $this->render('about');
+    }
 }
